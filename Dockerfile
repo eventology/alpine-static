@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Chance Hudson
 
-EXPOSE 80
+EXPOSE 3000
 
 RUN apk add --no-cache nginx && \
   mkdir -p /run/nginx && \
