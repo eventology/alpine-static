@@ -4,6 +4,7 @@ docker_login: &DockerLogin |
 version: 2
 jobs:
   build:
+    machine: true
     steps:
       - checkout
       - run: docker build . -t eventology/alpine-static:latest
