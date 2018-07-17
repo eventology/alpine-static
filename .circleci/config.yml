@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
       - run: docker build . -t eventology/alpine-static:latest
-      - run: &DockerLogin
+      - run: *DockerLogin
       - run: docker push eventology/alpine-static:latest
 workflows:
   version: 2
