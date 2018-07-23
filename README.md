@@ -1,6 +1,6 @@
-# alpine-static
+[![CircleCI](https://circleci.com/gh/eventology/alpine-static.svg?style=shield&circle-token=06cce24573169e20a2f1322b88e9da720adcde02)](https://circleci.com/gh/eventology/alpine-static)
 
-[![build status](https://gitlab.cosmunity.com/images/alpine-static/badges/master/build.svg)](https://gitlab.cosmunity.com/images/alpine-static/pipelines)
+# alpine-static
 
 Copy static files into this image and then run.
 
