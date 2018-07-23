@@ -7,7 +7,7 @@ Copy static files into this image and then run.
 ### Example Dockerfile
 
 ```
-FROM docker.cosmunity.com/images/alpine-static:master
+FROM eventology/alpine-static:latest
 MAINTAINER Chance Hudson
 
 # Assuming you have a simple html file you want to serve
