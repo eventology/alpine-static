@@ -1,6 +1,4 @@
-[![CircleCI](https://circleci.com/gh/eventology/alpine-static.svg?style=shield&circle-token=06cce24573169e20a2f1322b88e9da720adcde02)](https://circleci.com/gh/eventology/alpine-static)
-
-# alpine-static
+# alpine-static [![Build Status](https://travis-ci.com/eventology/alpine-static.svg?token=Pz62t27i4ngVwMxU3DsS&branch=master)](https://travis-ci.com/eventology/alpine-static)
 
 Copy static files into this image and then run.
 
