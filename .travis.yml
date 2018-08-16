@@ -1,0 +1,19 @@
+dist: trusty
+sudo: required
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+auth: &Auth |
+  npm i -g travis-env && eval "$(travis-env)"
+  echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+jobs:
+  include:
+  - stage: build
+    name: Build latest tag
+    script:
+    - *Auth
+    - docker build . -t eventology/alpine-static:latest
+    - docker push eventology/alpine-static:latest
+stages:
+- build
