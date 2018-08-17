@@ -1,4 +1,4 @@
-# alpine-static [![Build Status](https://travis-ci.com/eventology/alpine-static.svg?token=Pz62t27i4ngVwMxU3DsS&branch=master)](https://travis-ci.com/eventology/alpine-static)
+# alpine-static [![Build Status](https://travis-ci.org/eventology/alpine-static.svg?branch=master)](https://travis-ci.org/eventology/alpine-static)
 
 Copy static files into this image and then run.
 
