@@ -1,5 +1,4 @@
 FROM alpine:latest
-MAINTAINER Chance Hudson
 
 EXPOSE 3000
 

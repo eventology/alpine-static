@@ -1,20 +1,24 @@
 dist: trusty
 sudo: required
 language: generic
-notifications:
-  email:
-    on_success: change
-    on_failure: change
+
 auth: &Auth |
   eval "$(npx travis-env)"
-  echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+before_script:
+  - *Auth
+  - docker --version # document the version travis is using
+  - pip install --user awscli # install aws cli w/o sudo
+  - export PATH=$PATH:$HOME/.local/bin # put aws in the path
+  - eval $(aws ecr get-login --no-include-email --region us-east-1) #needs AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY envvars
+
 jobs:
   include:
-  - stage: build
-    name: Build latest tag
-    script:
-    - *Auth
-    - docker build . -t eventology/alpine-static:latest
-    - docker push eventology/alpine-static:latest
+    - stage: build
+      name: Build latest tag
+      script:
+        - *Auth
+        - docker build -t alpine-static:latest .
+        - docker tag alpine-static:latest 712623285669.dkr.ecr.us-east-1.amazonaws.com/alpine-static:latest
+        - docker push 712623285669.dkr.ecr.us-east-1.amazonaws.com/alpine-static:latest
 stages:
-- build
+  - build
